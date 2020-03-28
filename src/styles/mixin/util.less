@@ -1,0 +1,172 @@
+.absolute-pos() {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// .absolute-pos(@t, @r, @b, @l) {
+//     top: @t;
+//     right: @r;
+//     bottom: @b;
+//     left: @l;
+// }
+
+.fixed-pos(@t, @r, @b, @l) {
+  .absolute-pos(@t, @r, @b, @l);
+}
+
+.block() {
+  float: left;
+  width: 100%;
+}
+
+.clearfix() {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+.word-break() {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.word-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hairline(@direction, @color, @radius, @size) when (@direction =all) {
+  &::after {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    border: solid @size @color;
+    border-radius: @radius * 2;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    content: '';
+  }
+}
+
+.hairline(@direction, @color, @radius, @size) when (@direction =top) {
+  &::after {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: @size;
+    background-color: @color;
+    transform-origin: 50% 0; // transform: scaleY(0.5) translateY(-100%);
+    content: '';
+
+    @media (min-resolution: 3dppx) {
+      transform: scaleY(0.33) translateY(-100%);
+    }
+  }
+}
+
+.hairline(@direction, @color, @radius, @size) when (@direction =bottom) {
+  &::before {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: @size;
+    background-color: @color;
+    transform-origin: 100% 50%; // transform: scaleY(0.5) translateY(100%);
+    content: '';
+
+    @media (min-resolution: 3dppx) {
+      transform: scaleY(0.33) translateY(100%);
+    }
+  }
+}
+
+.hairline(@direction, @color, @radius, @size) when (@direction =left) {
+  &::after {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: @size;
+    height: 100%;
+    background-color: @color;
+    transform-origin: 0 50%; // transform: scaleX(0.5) translateX(-100%);
+    content: '';
+
+    @media (min-resolution: 3dppx) {
+      transform: scaleX(0.33) translateX(-100%);
+    }
+  }
+}
+
+.hairline(@direction, @color, @radius, @size) when (@direction =right) {
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: @size;
+    height: 100%;
+    background-color: @color;
+    transform-origin: 100% 50%; // transform: scaleX(0.5) translateX(100%);
+    content: '';
+
+    @media (min-resolution: 3dppx) {
+      transform: scaleX(0.33) translateX(100%);
+    }
+  }
+}
+
+.remove-hairline(@direction) when (@direction=all) {
+  &::after {
+    display: none;
+  }
+}
+
+.remove-hairline(@direction) when(@direction=top) {
+  &::after {
+    display: none;
+  }
+}
+
+.remove-hairline(@direction) when(@direction=bottom) {
+  &::before {
+    display: none;
+  }
+}
+
+.remove-hairline(@direction) when(@direction=left) {
+  &::after {
+    display: none;
+  }
+}
+
+.remove-hairline(@direction) when(@direction=right) {
+  &::before {
+    display: none;
+  }
+}
+
+.vertical-height(@height) {
+  height: @height;
+  line-height: @height;
+}

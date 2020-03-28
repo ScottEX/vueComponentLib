@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render demo color 1`] = `
+<button type="button" class="md-button default block">
+  <div class="md-button-inner">
+    <!---->
+    <p class="md-button-content"></p>
+  </div>
+</button>
+`;

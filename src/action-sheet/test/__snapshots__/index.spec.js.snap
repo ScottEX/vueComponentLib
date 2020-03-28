@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render demo color 1`] = `
+<div class="bob-action-sheet">
+  <div class="weui-mask weui-mask_transparent" style="display: none;" name="vux-actionsheet-mask"></div>
+  <div class="weui-actionsheet">
+    <div class="weui-actionsheet__menu">
+      <!---->
+    </div>
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`render demo color 2`] = `
+<div class="bob-action-sheet">
+  <div class="weui-mask weui-mask_transparent" style="display: none;" name="vux-actionsheet-mask"></div>
+  <div class="weui-actionsheet">
+    <div class="weui-actionsheet__menu">
+      <div class="weui-actionsheet__title">
+        选择拨打电话
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div class="weui-actionsheet__cancel">
+    <!---->
+  </div>
+</div>
+`;

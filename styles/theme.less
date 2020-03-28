@@ -1,0 +1,185 @@
+@import "./1px.less";
+
+body {
+  font-family: "PingFang SC", "SourceHanSansSC", "Microsoft YaHei", Helvetica,
+    sans-serif, Arial;
+  font-size: 28px;
+  line-height: 1.5;
+  color: #37414e;
+  background-color: #f4f6f8;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/* 字体设置 */
+
+// 字体引入
+// @font-face {
+//   font-family: 'DINPro-Regular';
+//   /* project id 70323 */
+//   src: url('font/DINPro-Regular.otf');
+// }
+
+// @font-face {
+//   font-family: 'DINPro-Medium';
+//   /* project id 70323 */
+//   src: url('font/DINPro-Medium.otf');
+// }
+
+// @font-face {
+//   font-family: 'DINPro-Bold';
+//   /* project id 70323 */
+//   src: url('font/DINPro-Bold.otf');
+// }
+// 字体名称
+@DINPro-Regular: 'DINPro-Regular';
+@DINPro-Medium: 'DINPro-Medium';
+@DINPro-Bold: 'DINPro-Bold';
+// 加粗字体
+@fontWeight: 601;
+
+
+// color
+//文字/中性色
+/////////////////////////////////////
+@font-color-1: #37414e;
+//一级优先级文字
+@font-color-2: #8b95a3;
+//二级优先级文字
+@font-color-tips: #ced2d9;
+//提示性文字
+@font-color-white: #ffffff;
+//非白底下反显文字
+@font-color-auxiliary: #98a3b2;
+//多级辅助文字
+@font-color-auxiliary-top: #6e7987;
+//多级辅助文字/例：标题栏
+/////////////////////////////////////
+//文字/品牌色系
+@font-color-bob-blue: #107aee;
+//文字链接--北京银行蓝
+@font-color-bob-red: #fc5555;
+//一级强调色--北京银行红
+@font-color-bob-orange: #fc882c;
+//提示性文字--北京银行橙
+@font-color-bob-green: #2bba82;
+//特殊色值--北京银行绿
+
+//按钮/点击状态
+@button-color-disabled: #ced2d9;
+//不可点击状态
+@button-color-default: #107aee;
+//可点击状态
+@button-color-active: #0564cc;
+// 红色按钮-不可点击状态
+@button-color-red-default: #f46363;
+// 红色按钮-可点击状态
+@button-color-red-active: #e74c4c;
+//背景/分割线
+@background-color-default: #f4f6f8;
+//常规背景色
+@background-color-white: #ffffff;
+//白色背景色
+@line-color-default: #e1e3e5;
+//分割线
+@line-color-between-text: #ced2d9;
+//文字链接之间的分割线
+
+//常用功能入口图标
+@menu-color-finance: #4c99ed;
+//理财金融类
+@menu-color-setting: #33b8b6;
+//快捷操作类
+@menu-color-life: #ff6b6b;
+//生活消费类
+@menu-color-account-default: #33b8b6;
+//账户服务类
+@menu-color-account-orange: #f9aa44;
+//账户服务类
+@menu-color-account-blue: #4c99ed;
+//账户服务类
+@menu-color-account-green: #33cd6d;
+
+
+
+//账户服务类 
+
+// line分割线
+//边框分割线
+.bob-1px,
+.bob-1px-t,
+.bob-1px-b,
+.bob-1px-tb,
+.bob-1px-l,
+.bob-1px-r {
+  position: relative;
+  background: #fff;
+}
+
+.bob-1px {
+  &:before {
+    .setLine(@line-color-default);
+  }
+}
+
+.bob-1px-t {
+  &:before {
+    .setTopLine(@line-color-default);
+  }
+}
+
+.bob-1px-b {
+  &:after {
+    .setBottomLine(@line-color-default);
+  }
+}
+
+.bob-1px-tb {
+  &:before {
+    .setTopLine(@line-color-default);
+  }
+
+  &:after {
+    .setBottomLine(@line-color-default);
+  }
+}
+
+.bob-1px-l {
+  &:before {
+    .setLeftLine(@line-color-default);
+  }
+}
+
+.bob-1px-r {
+  &:after {
+    .setRightLine(@line-color-default);
+  }
+}
+
+.bob-line {
+  content: " ";
+  display: block;
+  height: 1px;
+  background-color: @line-color-default;
+}
+
+.bob-margin-left-15 {
+  margin-left: 30px;
+}
+
+.bob-margin-right-15 {
+  margin-right: 30px;
+}
+
+
+//字体规范
+.bob-font-family-Regular {
+  font-family: "PingFang SC-Regular", "SourceHanSansSC-Regular",
+    "Microsoft YaHei", Helvetica, sans-serif, Arial;
+}
+
+.bob-font-family-Medium {
+  font-family: "PingFang SC-Medium", "SourceHanSansSC-Medium", "Microsoft YaHei",
+    Helvetica, sans-serif, Arial;
+}
